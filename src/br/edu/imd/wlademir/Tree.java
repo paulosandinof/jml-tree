@@ -28,7 +28,10 @@ public class Tree {
         Node n = new Node(value);
         insert(n);
     }
-
+    
+    /*@
+	@ ensure (\result != null) ==> (\exists Node n; n.getValor == key);
+	@*/
     public Node search(int key) {
         if (isEmpty()) {
             return null;

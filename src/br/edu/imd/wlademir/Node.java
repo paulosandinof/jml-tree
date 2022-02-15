@@ -54,7 +54,8 @@ public class Node {
         return (this.valor == null);
     }
 
-    /*@ requires node != null;
+    /*@ 
+    @ requires node != null && (node.getValor != null); 
     @ assignable left, right, valor;
     @
     @*/
@@ -73,7 +74,8 @@ public class Node {
             }
         }
     }
-
+    
+	
     public Node search(int key) {
         if (key == this.valor) {
             return this;
@@ -197,7 +199,10 @@ public class Node {
 
         return str;
     }
-
+    
+    /*@ 
+    @ ensure \result >= 1;
+    @*/
     public int calcAltura() {
 
         if (this.left == null && this.right == null) {
@@ -211,7 +216,10 @@ public class Node {
             return 1 + Math.max(this.left.calcAltura(), this.right.calcAltura());
         }
     }
-
+    
+    /*@ 
+    @ assignable this.balanceamento;
+    @*/
     public void calcularBalanceamento() {
         if (this.left == null && this.right == null) {
             this.balanceamento = 0;

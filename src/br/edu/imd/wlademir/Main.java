@@ -28,7 +28,7 @@ public class Main {
 //
 //        tree.remove(38);
 //
-//        System.out.println();
+        System.out.println(tree.search(22).toString());
 //
 //        tree.inOrdem();
 //        tree.remove(35);
