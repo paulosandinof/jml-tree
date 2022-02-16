@@ -22,6 +22,7 @@ public class Main {
         tree.insert(35);
         tree.insert(32);
         tree.insert(38);
+        
 
         tree.printTree();
 
@@ -46,15 +47,15 @@ public class Main {
 //        tree.preOrdem();
 
 //
-//        JFrame frame = new JFrame("Visualizador de ABB");
-//        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-//        frame.setSize(1920, 1080);
-//
-//        TreeView view = new TreeView(tree);
-//
-//        frame.add(view);
-//
-//        frame.setVisible(true);
+        JFrame frame = new JFrame("Visualizador de ABB");
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setSize(1920, 1080);
+
+        TreeView view = new TreeView(tree);
+
+        frame.add(view);
+
+        frame.setVisible(true);
 
     }
 }

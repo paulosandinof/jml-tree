@@ -118,7 +118,7 @@ public class Node {
         }
     }
 
-    public void posOrdem() {
+    public /*@ pure @*/ void posOrdem() {
 
         if (this.right != null) {
             this.right.posOrdem();
@@ -170,7 +170,9 @@ public class Node {
             return "[" + this.getValor() + "]" + "( balanceamento :" + this.getBalanceamento() + ")";
         }
     }
-
+    
+    /*@ requires level >= 0;
+    @*/
     public String printTree(int level) {
 
         String str = toString() + "\n";

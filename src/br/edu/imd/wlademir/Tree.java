@@ -63,8 +63,12 @@ public class Tree {
             raiz.calcularBalanceamento();
         }
     }
-
+    
+    /* @
+     @ ensures Optional.ofNullable(value).orElse(0) == 0; 
+     @*/
     public void remove(int value) {
+    	
         if (isEmpty()) {
             return;
         }

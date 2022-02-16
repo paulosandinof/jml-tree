@@ -4,11 +4,14 @@ import javax.swing.*;
 import java.awt.*;
 
 public class TreeView extends JComponent {
-
-    private Tree arvore = null;
-    private int nodeSize = 30;
-    private int offset = 80;
-
+	
+	// @ invariant nodeSize > 0;
+	// @ invariant offset > 0;
+    private /*@ spec_public nullable @*/ Tree arvore = null;
+    private /*@ spec_public @*/ int nodeSize = 30;
+    private /*@ spec_public @*/ int offset = 80;
+    
+    // @ assignable this.arvore;
     public TreeView(Tree arvore) {
         this.arvore = arvore;
     }
@@ -27,6 +30,10 @@ public class TreeView extends JComponent {
         );
     }
 
+    /* @
+     @ requires  (graphics != null) && (level >=0);
+     @ ensures this.tree == \oldthis.tree;
+     @*/
     private void drawNode(Graphics graphics, Node node, int x, int y, int level) {
         graphics.drawOval(x, y, nodeSize, nodeSize);
         graphics.drawString(
