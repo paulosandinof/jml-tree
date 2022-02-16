@@ -55,7 +55,7 @@ public class Node {
     }
 
     /*@ 
-    @ requires node != null && (node.getValor != null); 
+    @ requires node != null && (node.getValor() != null); 
     @ assignable left, right, valor;
     @
     @*/
@@ -201,7 +201,7 @@ public class Node {
     }
     
     /*@ 
-    @ ensure \result >= 1;
+    @ ensures \result >= 1;
     @*/
     public int calcAltura() {
 

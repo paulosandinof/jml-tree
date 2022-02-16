@@ -1,5 +1,7 @@
 package br.edu.imd.wlademir;
 
+import javax.swing.JFrame;
+
 public class Main {
 
     public static void main(String[] args) {
@@ -22,6 +24,10 @@ public class Main {
         tree.insert(38);
 
         tree.printTree();
+
+        // [PONTO DE FALHA 1] 
+//        Node n = null;
+//        tree.insert(n);
 
 //        tree.inOrdem();
 //

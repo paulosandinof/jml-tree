@@ -22,7 +22,8 @@ public class Tree {
         calcularBalanceamento();
     }
 
-    /*@ assignable raiz;
+    /*@ 
+    @ assignable this.raiz; 
     @*/
     public void insert(int value) {
         Node n = new Node(value);
@@ -30,7 +31,7 @@ public class Tree {
     }
     
     /*@
-	@ ensure (\result != null) ==> (\exists Node n; n.getValor == key);
+	@ ensures (\result != null) ==> (\exists Node n; n.getValor() == key);
 	@*/
     public Node search(int key) {
         if (isEmpty()) {
